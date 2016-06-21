@@ -2,6 +2,8 @@ This is yet another tool for image annotation based on PyQt4. Check this [video]
 
 #### Usage
 
+0. Start: `python annotaMain.py`
+
 1. Load images (click *Open* button), options:
     + **Image**: you can select one or multiple images
     + **Image Folder**: select all the images inside a folder
