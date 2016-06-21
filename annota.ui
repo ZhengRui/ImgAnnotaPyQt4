@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Annota</class>
+ <widget class="QMainWindow" name="Annota">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1205</width>
+    <height>807</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Annota</string>
+  </property>
+  <widget class="QWidget" name="prePanel">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="playerLayout">
+      <item>
+       <widget class="QLabel" name="frmInfoLabel">
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrameView" name="frameView">
+        <property name="minimumSize">
+         <size>
+          <width>800</width>
+          <height>600</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>1920</width>
+          <height>1080</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="progSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="playerControlLayout">
+        <item>
+         <widget class="QPushButton" name="prevButton">
+          <property name="text">
+           <string>Prev</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="playButton">
+          <property name="text">
+           <string>Play/Pause</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="nextButton">
+          <property name="text">
+           <string>Next</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QFormLayout" name="taskConfigLayout">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="0">
+       <widget class="QComboBox" name="srcTypeBox">
+        <item>
+         <property name="text">
+          <string>Image</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Image Folder</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Video</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cam</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QHBoxLayout" name="olsBtnLayout">
+        <item>
+         <widget class="QPushButton" name="openButton">
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Open</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="loadLabelButton">
+          <property name="maximumSize">
+           <size>
+            <width>90</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Load Label</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveLabelButton">
+          <property name="maximumSize">
+           <size>
+            <width>90</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Save Label</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="tasksBox"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QTableWidget" name="colorMapTabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>COLOR</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>LABEL</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QTabWidget" name="toolWidget">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="editTab">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="title">
+          <string>Edit</string>
+         </attribute>
+         <widget class="Line" name="line">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>130</y>
+            <width>291</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>1</x>
+            <y>2</y>
+            <width>269</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="editToolLayout">
+           <item row="0" column="0">
+            <widget class="QEditButton" name="removeButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton#removeButton:checked {
+	background-color: rgb(0,255,0);
+}</string>
+             </property>
+             <property name="text">
+              <string>REMOVE</string>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QEditButton" name="redoButton">
+             <property name="text">
+              <string>REDO</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QEditButton" name="undoButton">
+             <property name="text">
+              <string>UNDO</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>2</x>
+            <y>140</y>
+            <width>304</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QCheckBox" name="annoCBox">
+             <property name="text">
+              <string>Annotation</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="prevCBox">
+             <property name="text">
+              <string>Preview</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="autosaveCBox">
+             <property name="text">
+              <string>Autosave</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tbcTab">
+         <attribute name="title">
+          <string>TBC</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QFrameView</class>
+   <extends>QGraphicsView</extends>
+   <header>qframeview.h</header>
+   <slots>
+    <signal>sendSceneCoord(QString)</signal>
+    <signal>hasSelectedItems(bool)</signal>
+    <signal>unDoAble(bool)</signal>
+    <signal>reDoAble(bool)</signal>
+    <slot>removeSelectedItems()</slot>
+    <slot>redo()</slot>
+    <slot>undo()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>QEditButton</class>
+   <extends>QPushButton</extends>
+   <header>qeditbutton.h</header>
+   <slots>
+    <slot>switchBGColor(bool)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>prevButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Annota</receiver>
+   <slot>prevFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>527</x>
+     <y>764</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nextButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Annota</receiver>
+   <slot>nextFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1015</x>
+     <y>761</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>729</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>frameView</sender>
+   <signal>sendSceneCoord(QString)</signal>
+   <receiver>statusbar</receiver>
+   <slot>showMessage(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>584</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>266</x>
+     <y>799</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>progSlider</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>Annota</receiver>
+   <slot>toFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>625</x>
+     <y>719</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>526</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tasksBox</sender>
+   <signal>activated(QString)</signal>
+   <receiver>Annota</receiver>
+   <slot>updateCMapBox(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>213</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>colorMapTabel</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>Annota</receiver>
+   <slot>updatePenColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>frameView</sender>
+   <signal>hasSelectedItems(bool)</signal>
+   <receiver>removeButton</receiver>
+   <slot>switchBGColor(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>frameView</receiver>
+   <slot>removeSelectedItems()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>337</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>redoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>frameView</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>276</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>570</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>undoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>frameView</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>frameView</sender>
+   <signal>reDoAble(bool)</signal>
+   <receiver>redoButton</receiver>
+   <slot>switchBGColor(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>495</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>frameView</sender>
+   <signal>unDoAble(bool)</signal>
+   <receiver>undoButton</receiver>
+   <slot>switchBGColor(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>397</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Annota</receiver>
+   <slot>openSRCDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>110</x>
+     <y>134</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveLabelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Annota</receiver>
+   <slot>saveLabel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>337</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>107</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadLabelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Annota</receiver>
+   <slot>loadLabel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openSRCDialog()</slot>
+  <slot>prevFrame()</slot>
+  <slot>nextFrame()</slot>
+  <slot>showCoord()</slot>
+  <slot>toFrame()</slot>
+  <slot>updateCMapBox(QString)</slot>
+  <slot>updatePenColor()</slot>
+  <slot>saveLabel()</slot>
+  <slot>loadLabel()</slot>
+ </slots>
+</ui>
